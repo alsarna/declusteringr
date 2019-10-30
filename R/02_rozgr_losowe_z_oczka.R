@@ -1,6 +1,6 @@
 #' Random Points Choice From Grid Cell
 #'
-#' @description Function returns list of randomly choosen points from spatial object
+#' @description Function for random points choice from grid cell in spatial object
 #'
 #' @param spatial_object Object of class sfc
 #' @param cellsize Definition of grid cell
