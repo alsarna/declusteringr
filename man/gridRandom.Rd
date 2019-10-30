@@ -17,7 +17,7 @@ gridRandom(spatial_object, cellsize, numpoints)
 Object of class sfc
 }
 \description{
-Function returns list of randomly choosen points from spatial object
+Function for random points choice from grid cell in spatial object
 }
 \examples{
 
