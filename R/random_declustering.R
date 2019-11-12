@@ -8,9 +8,7 @@
 #'
 #' @return Object of class sfc
 #' @export
-#'
-#' @examples
-#'
+
 
 gridRandom <- function(spatial_object, cellsize, numpoints){
   geom <- sf::st_geometry(spatial_object)
