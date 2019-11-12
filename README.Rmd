@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of declusteringr is to declustering spatial data.
+The goal of declusteringr is to declustering spatial data. This package offers support for `sf` spatial objects.
 
 ## Installation
 
@@ -27,27 +27,24 @@ You can install the released version of declusteringr from [CRAN](https://CRAN.R
 install.packages("declusteringr")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example of cell declustering:
 
 ```{r example}
 library(declusteringr)
-## basic example code
+gridWeighted(spatial_object = sf::st_read('dane/punkty1.shp'), cellsize = 0.05)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+`gridWeighted` is adding columns row.id - the cell's number, col.id - the point's number, received_weights - the weight of each cell and lengths - amounts of each points in cell. `gridWeighted` does not change amount of features.
+Weights are calculated according to this pattern:
 
-```{r cars}
-summary(cars)
+
+
+This is basic example of random declustering:
+
+```{r}
+gridRandom(spatial_object = sf::st_read('dane/punkty1.shp'), cellsize = 0.05 , numpoint = 1)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+`gridRandom` is choosing random features by specifying some parameters. `gridRandom` can change amount of features.

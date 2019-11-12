@@ -19,6 +19,3 @@ Object of class sfc
 \description{
 Function for random points choice from grid cell in spatial object
 }
-\examples{
-
-}

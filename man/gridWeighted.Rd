@@ -17,6 +17,3 @@ Object of class sfc
 \description{
 Function returns list of points with their weights and lengths from grid cell in spatial object
 }
-\examples{
-
-}
