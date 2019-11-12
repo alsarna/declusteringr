@@ -13,3 +13,9 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports:
   sf
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+URL: https://github.com/alsarna/declusteringr
+BugReports: https://github.com/alsarna/declusteringr/issues
