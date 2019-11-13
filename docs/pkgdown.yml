@@ -3,4 +3,7 @@ pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
   declusteringr: declusteringr.html
+urls:
+  reference: http://alsarna.github.io/declusteringr/reference
+  article: http://alsarna.github.io/declusteringr/articles
 

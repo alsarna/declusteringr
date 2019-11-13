@@ -1,1 +1,6 @@
 destination: docs
+title: declusteringr
+url: http://alsarna.github.io/declusteringr
+template:
+  params:
+    bootswatch: sandstone

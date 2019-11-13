@@ -25,6 +25,7 @@ This is a basic example of cell declustering:
 
 ``` r
 library(declusteringr)
+
 gridWeighted(spatial_object = sf::st_read('dane/punkty1.shp'), cellsize = 0.05)
 #> Reading layer `punkty1' from data source `C:\Users\Lenovo\Documents\Packages_Functions\declusteringr\dane\punkty1.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 50 features and 1 field
