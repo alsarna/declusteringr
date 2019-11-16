@@ -15,7 +15,8 @@ Imports:
   sf
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 2.1.0)
 VignetteBuilder: knitr
 URL: https://github.com/alsarna/declusteringr
 BugReports: https://github.com/alsarna/declusteringr/issues
