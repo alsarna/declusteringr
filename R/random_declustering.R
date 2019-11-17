@@ -2,7 +2,7 @@
 #'
 #' @description Function for random points choice from grid cell in spatial object
 #'
-#' @param spatial_object Object of class sfc
+#' @param spatial_object Object of class sfc or path to object of class sfc
 #' @param cellsize Definition of grid cell
 #' @param numpoints Number of points that will be chosen from a grid cell
 #'

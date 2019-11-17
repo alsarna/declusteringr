@@ -2,7 +2,7 @@
 #'
 #' @description Function returns list of points with their weights and lengths from grid cell in spatial object
 #'
-#' @param spatial_object Object of class sfc
+#' @param spatial_object Object of class sfc or path to object of class sfc
 #' @param cellsize Definition of grid cell
 #'
 #' @return Object of class sfc
