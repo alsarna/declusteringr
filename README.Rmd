@@ -34,9 +34,14 @@ This is a basic example of cell declustering:
 ```{r example}
 library(declusteringr)
 
-gridWeighted(spatial_object = sf::st_read('dane/punkty1.shp'), cellsize = 0.05)
+x = gridWeighted(spatial_object = sf::st_read("inst/points/punkty4.shp"), cellsize = 0.09)
 ```
-
+Plot input data and weighted points:
+```{r}
+par(mfrow=c(1,2))
+plot(x$geometry)
+plot(x$geometry, col = unlist(x$received_weights))
+```
 
 `gridWeighted` is adding columns row.id - the cell's number, col.id - the point's number, received_weights - the weight of each cell and lengths - amounts of each points in cell. `gridWeighted` does not change amount of features.
 Weights are calculated according to this pattern:
@@ -46,8 +51,15 @@ Weights are calculated according to this pattern:
 This is basic example of random declustering:
 
 ```{r}
-gridRandom(spatial_object = sf::st_read('dane/punkty1.shp'), cellsize = 0.05 , numpoint = 1)
+y = gridRandom(spatial_object = sf::st_read('inst/points/punkty4.shp'), cellsize = 0.09 , numpoint = 2)
 ```
 
+Plot input data and data after random declustering:
+
+```{r}
+par(mfrow=c(1,2))
+plot(x$geometry)
+plot(y)
+```
 
 `gridRandom` is choosing random features by specifying some parameters. `gridRandom` can change amount of features.
