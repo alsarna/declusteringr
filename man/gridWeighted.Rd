@@ -7,7 +7,7 @@
 gridWeighted(spatial_object, cellsize)
 }
 \arguments{
-\item{spatial_object}{Object of class sfc}
+\item{spatial_object}{Object of class sfc or path to object of class sfc}
 
 \item{cellsize}{Definition of grid cell}
 }
