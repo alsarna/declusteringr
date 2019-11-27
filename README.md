@@ -25,15 +25,15 @@ This is a basic example of cell declustering:
 
 ``` r
 library(declusteringr)
-points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
-#> Reading layer `punkty4' from data source `/home/jn/R/x86_64-redhat-linux-gnu-library/3.6/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'
+
+x = gridWeighted(spatial_object = sf::st_read("inst/points/punkty4.shp"), cellsize = 0.09)
+#> Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\Packages_Functions\declusteringr\inst\points\punkty4.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 200 features and 1 field
 #> geometry type:  POINT
 #> dimension:      XY
 #> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
-x = gridWeighted(spatial_object = points4, cellsize = 0.09)
 #> although coordinates are longitude/latitude, st_intersects assumes that they are planar
 ```
 
@@ -58,10 +58,18 @@ pattern:
 where $ n\_i $ is the number of samples in the cell in which sample $ j
 $ is located and $ n $ is the total number cells with samples.
 
-This is basic example of random declustering:
+This is basic example of random
+declustering:
 
 ``` r
-y = gridRandom(spatial_object = points4, cellsize = 0.09, numpoint = 2)
+y = gridRandom(spatial_object = sf::st_read('inst/points/punkty4.shp'), cellsize = 0.09 , numpoint = 2)
+#> Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\Packages_Functions\declusteringr\inst\points\punkty4.shp' using driver `ESRI Shapefile'
+#> Simple feature collection with 200 features and 1 field
+#> geometry type:  POINT
+#> dimension:      XY
+#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
+#> epsg (SRID):    4326
+#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #> although coordinates are longitude/latitude, st_intersects assumes that they are planar
 ```
 
