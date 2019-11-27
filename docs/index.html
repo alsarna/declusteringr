@@ -135,6 +135,7 @@
 <a class="sourceLine" id="cb3-3" title="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry, <span class="dt">col =</span> <span class="kw"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(x<span class="op">$</span>received_weights))</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
 <p><code>gridWeighted</code> is adding columns row.id - the cell’s number, col.id - the point’s number, received_weights - the weight of each cell and lengths - amounts of each points in cell. <code>gridWeighted</code> does not change amount of features. Weights are calculated according to this pattern:</p>
+<p><img src="cell_decl_pattern.PNG" alt="pattern"></p>
 <p>where ni is the number of samples in the cell in which sample j is located and n is the total number cells with samples.</p>
 <p>This is basic example of random declustering:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">y =<span class="st"> </span><span class="kw"><a href="reference/gridRandom.html">gridRandom</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span> , <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
@@ -143,7 +144,7 @@
 <a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt; Geometry set for 144 features </span></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; geometry type:  POINT</span></a>
 <a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; dimension:      XY</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.08642316 ymax: 0.5297012</span></a>
 <a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; epsg (SRID):    4326</span></a>
 <a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs</span></a>
 <a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; First 5 geometries:</span></a>
@@ -151,7 +152,7 @@
 <a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; POINT (-0.9401051 -0.09067107)</span></a>
 <a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; POINT (-0.881981 -0.09763874)</span></a>
 <a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; POINT (-0.7750732 -0.1312637)</span></a>
-<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; POINT (-0.7998737 -0.09106148)</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; POINT (-0.8030895 -0.0664513)</span></a></code></pre></div>
 <p>Plot input data and data after random declustering:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry)</a>

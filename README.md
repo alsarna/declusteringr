@@ -82,6 +82,8 @@ the point’s number, received\_weights - the weight of each cell and
 lengths - amounts of each points in cell. `gridWeighted` does not change
 amount of features. Weights are calculated according to this pattern:
 
+![pattern](cell_decl_pattern.PNG)
+
 where ni is the number of samples in the cell in which sample j is
 located and n is the total number cells with samples.
 
@@ -94,7 +96,7 @@ y
 #> Geometry set for 144 features 
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
+#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.08642316 ymax: 0.5297012
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #> First 5 geometries:
@@ -102,7 +104,7 @@ y
 #> POINT (-0.9401051 -0.09067107)
 #> POINT (-0.881981 -0.09763874)
 #> POINT (-0.7750732 -0.1312637)
-#> POINT (-0.7998737 -0.09106148)
+#> POINT (-0.8030895 -0.0664513)
 ```
 
 Plot input data and data after random declustering:
