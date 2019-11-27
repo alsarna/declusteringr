@@ -82,38 +82,38 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of declusteringr from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"declusteringr"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"declusteringr"</span>)</a></code></pre></div>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
 <p>This is a basic example of cell declustering:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(declusteringr)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">points4 =<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">st_read</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"points/punkty4.shp"</span>, <span class="dt">package =</span> <span class="st">"declusteringr"</span>))</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; Reading layer `punkty4' from data source `/home/jn/R/x86_64-redhat-linux-gnu-library/3.6/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; Simple feature collection with 200 features and 1 field</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; geometry type:  POINT</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; dimension:      XY</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt; epsg (SRID):    4326</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">x =<span class="st"> </span><span class="kw"><a href="reference/gridWeighted.html">gridWeighted</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span>)</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(declusteringr)</a>
+<a class="sourceLine" id="cb2-2" title="2">points4 =<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">st_read</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"points/punkty4.shp"</span>, <span class="dt">package =</span> <span class="st">"declusteringr"</span>))</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\R\win-library\3.6\declusteringr\points\punkty4.shp' using driver `ESRI Shapefile'</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt; Simple feature collection with 200 features and 1 field</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt; geometry type:  POINT</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; dimension:      XY</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; epsg (SRID):    4326</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs</span></a>
+<a class="sourceLine" id="cb2-10" title="10">x =<span class="st"> </span><span class="kw"><a href="reference/gridWeighted.html">gridWeighted</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span>)</a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></a></code></pre></div>
 <p>Plot input data and weighted points:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry, <span class="dt">col =</span> <span class="kw"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(x<span class="op">$</span>received_weights))</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry)</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry, <span class="dt">col =</span> <span class="kw"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span>(x<span class="op">$</span>received_weights))</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
 <p><code>gridWeighted</code> is adding columns row.id - the cell’s number, col.id - the point’s number, received_weights - the weight of each cell and lengths - amounts of each points in cell. <code>gridWeighted</code> does not change amount of features. Weights are calculated according to this pattern:</p>
 <p>[ {w}’_j = \frac{\frac{1}{n_i}}{number\;of\;cells\;with\;data}\cdot n ]</p>
 <p>where $ n_i $ is the number of samples in the cell in which sample $ j $ is located and $ n $ is the total number cells with samples.</p>
 <p>This is basic example of random declustering:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">y =<span class="st"> </span><span class="kw"><a href="reference/gridRandom.html">gridRandom</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span>, <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">y =<span class="st"> </span><span class="kw"><a href="reference/gridRandom.html">gridRandom</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span> , <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></a></code></pre></div>
 <p>Plot input data and data after random declustering:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x<span class="op">$</span>geometry)</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(y)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 <p><code>gridRandom</code> is choosing random features by specifying some parameters. <code>gridRandom</code> can change amount of features.</p>
 </div>
