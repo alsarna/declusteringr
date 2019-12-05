@@ -7,12 +7,12 @@
 gridWeighted(spatial_object, cellsize)
 }
 \arguments{
-\item{spatial_object}{Object of class sfc or path to object of class sfc}
+\item{spatial_object}{Object of class sfc or sf}
 
-\item{cellsize}{Definition of grid cell}
+\item{cellsize}{Target cellsize in map units}
 }
 \value{
-Object of class sfc
+Object of class sf
 }
 \description{
 Function returns list of points with their weights and lengths from grid cell in spatial object

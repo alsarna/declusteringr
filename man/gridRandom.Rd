@@ -2,20 +2,20 @@
 % Please edit documentation in R/random_declustering.R
 \name{gridRandom}
 \alias{gridRandom}
-\title{Random Points Choice From Grid Cell}
+\title{Random Declustering}
 \usage{
 gridRandom(spatial_object, cellsize, numpoints)
 }
 \arguments{
-\item{spatial_object}{Object of class sfc or path to object of class sfc}
+\item{spatial_object}{Object of class sfc or sf}
 
 \item{cellsize}{Definition of grid cell}
 
 \item{numpoints}{Number of points that will be chosen from a grid cell}
 }
 \value{
-Object of class sfc
+Object of class sf
 }
 \description{
-Function for random points choice from grid cell in spatial object
+Function for random points selection from grid cells in a spatial object
 }
