@@ -44,5 +44,5 @@ gridWeighted <- function(spatial_object, cellsize){
   weights_and_lengths <- weights_and_lengths[order(weights_and_lengths$col.id), ]
   spatial_object_decl <- sf::st_sf(data.frame(spatial_object, weights_and_lengths))
 
-  return(spatial_object_decl)
+  return(spatial_object_decl[-c(2,3)])
 }
