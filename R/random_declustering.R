@@ -1,15 +1,13 @@
-#' Random Points Choice From Grid Cell
+#' Random Declustering
 #'
-#' @description Function for random points choice from grid cell in spatial object
+#' @description Function for random points selection from grid cells in a spatial object
 #'
-#' @param spatial_object Object of class sfc or path to object of class sfc
+#' @param spatial_object Object of class sfc or sf
 #' @param cellsize Definition of grid cell
 #' @param numpoints Number of points that will be chosen from a grid cell
 #'
-#' @return Object of class sfc
+#' @return Object of class sf
 #' @export
-
-
 gridRandom <- function(spatial_object, cellsize, numpoints){
   geom <- sf::st_geometry(spatial_object)
   proj <- sf::st_crs(spatial_object)
@@ -29,5 +27,5 @@ gridRandom <- function(spatial_object, cellsize, numpoints){
   unlisted = unlist(intersection)
   sf_object = geom[unlisted]
   }
-  return(sf_object)
+  return(sf::st_sf(geom = sf_object))
 }
