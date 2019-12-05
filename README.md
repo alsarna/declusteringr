@@ -34,9 +34,9 @@ Let’s start with reading the data:
 
 ``` r
 library(sf)
-#> Linking to GEOS 3.7.1, GDAL 2.3.2, PROJ 5.2.0
+#> Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3
 points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
-#> Reading layer `punkty4' from data source `/home/jn/R/x86_64-redhat-linux-gnu-library/3.6/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'
+#> Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\R\win-library\3.6\declusteringr\points\punkty4.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 200 features and 1 field
 #> geometry type:  POINT
 #> dimension:      XY
@@ -61,17 +61,28 @@ x
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #> First 10 features:
-#>     id row.id col.id received_weights lengths                       geometry
-#> 157  0     77      1         4.545455       2   POINT (0.005593351 0.392986)
-#> 128  1     64      2         3.030303       3   POINT (-0.01407625 0.280163)
-#> 140  2     71      3         1.298701       7   POINT (-0.4931845 0.3204552)
-#> 4    3      3      4         3.030303       3 POINT (-0.7998737 -0.09106148)
-#> 173  4     83      5         3.030303       3   POINT (-0.6024538 0.4721198)
-#> 141  5     71      6         1.298701       7   POINT (-0.4999889 0.3408532)
-#> 187  6     94      7         4.545455       2   POINT (-0.8074892 0.4988539)
-#> 110  7     53      8         3.030303       3   POINT (-0.9635923 0.2408171)
-#> 152  8     75      9         3.030303       3   POINT (-0.1446985 0.3359325)
-#> 43   9     25     10         2.272727       4 POINT (0.03232037 -0.02043053)
+#>     id row.id col.id received_weights lengths
+#> 157  0     77      1         4.545455       2
+#> 128  1     64      2         3.030303       3
+#> 140  2     71      3         1.298701       7
+#> 4    3      3      4         3.030303       3
+#> 173  4     83      5         3.030303       3
+#> 141  5     71      6         1.298701       7
+#> 187  6     94      7         4.545455       2
+#> 110  7     53      8         3.030303       3
+#> 152  8     75      9         3.030303       3
+#> 43   9     25     10         2.272727       4
+#>                           geometry
+#> 157   POINT (0.005593351 0.392986)
+#> 128   POINT (-0.01407625 0.280163)
+#> 140   POINT (-0.4931845 0.3204552)
+#> 4   POINT (-0.7998737 -0.09106148)
+#> 173   POINT (-0.6024538 0.4721198)
+#> 141   POINT (-0.4999889 0.3408532)
+#> 187   POINT (-0.8074892 0.4988539)
+#> 110   POINT (-0.9635923 0.2408171)
+#> 152   POINT (-0.1446985 0.3359325)
+#> 43  POINT (0.03232037 -0.02043053)
 ```
 
 Plot input data and weighted points:
@@ -85,9 +96,8 @@ plot(x["received_weights"], main = "cell declustering",
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
-`gridWeighted()` is adding the following columns: `row.id` - the cell’s
-number, `col.id` - the point’s number, `received_weights` - the weight
-of each cell, and `lengths` - a number of points in cell.
+`gridWeighted()` is adding the following columns: `received_weights` -
+the weight of each cell, and `lengths` - a number of points in cell.
 `gridWeighted()` does not change the number of features. Weights are
 calculated according to the equation:
 
@@ -107,7 +117,7 @@ y
 #> Simple feature collection with 144 features and 0 fields
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1.032267 ymin: -0.1312637 xmax: 0.09442347 ymax: 0.5297012
+#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #> First 10 features:
@@ -115,13 +125,13 @@ y
 #> 1  POINT (-0.9933803 -0.05165088)
 #> 2  POINT (-0.9401051 -0.09067107)
 #> 3   POINT (-0.881981 -0.09763874)
-#> 4  POINT (-0.7998737 -0.09106148)
-#> 5   POINT (-0.7750732 -0.1312637)
+#> 4   POINT (-0.7750732 -0.1312637)
+#> 5  POINT (-0.7998737 -0.09106148)
 #> 6   POINT (-0.6788683 -0.0741609)
 #> 7  POINT (-0.6063728 -0.09643894)
-#> 8   POINT (-0.4340456 -0.1129716)
-#> 9  POINT (-0.4681831 -0.09190032)
-#> 10    POINT (-0.32688 -0.1213027)
+#> 8  POINT (-0.4681831 -0.09190032)
+#> 9   POINT (-0.4430243 -0.1170414)
+#> 10 POINT (-0.3198002 -0.09552239)
 ```
 
 Plot input data and data after random declustering:
@@ -139,3 +149,7 @@ plot(y, main = "random declustering",
 parameters. `gridRandom()` can change the number of features.
 
 ## References
+
+1.  Declustering and Debiasing - M. J. Pyrcz (<mpyrcz@ualberta.ca>) and
+    C. V. Deutsch (<cdeutsch@ualberta.ca>) Centre for Computational
+    Geostatistics University of Alberta, Edmonton, Alberta, CANADA

@@ -63,7 +63,7 @@ plot(x["received_weights"], main = "cell declustering",
      key.pos = NULL, reset = FALSE)
 ```
 
-`gridWeighted()` is adding the following columns: `row.id` - the cell's number, `col.id` - the point's number, `received_weights` - the weight of each cell, and `lengths` - a number of points in cell.
+`gridWeighted()` is adding the following columns: `received_weights` - the weight of each cell, and `lengths` - a number of points in cell.
 `gridWeighted()` does not change the number of features.
 Weights are calculated according to the equation:
 
@@ -93,4 +93,4 @@ plot(y, main = "random declustering",
 `gridRandom()` can change the number of features.
 
 ## References
-
+1. Declustering and Debiasing - M. J. Pyrcz (mpyrcz@ualberta.ca) and C. V. Deutsch (cdeutsch@ualberta.ca) Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA
