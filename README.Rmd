@@ -37,7 +37,7 @@ remotes::install_github("declusteringr")
 
 ## Examples
 
-Let's start with reading the data:
+Let's start with reading the data: 
 
 ```{r}
 library(sf)

@@ -106,21 +106,21 @@ y
 #> Simple feature collection with 144 features and 0 fields
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1.032267 ymin: -0.1224141 xmax: 0.08642316 ymax: 0.5297012
+#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #> First 10 features:
 #>                              geom
 #> 1  POINT (-0.9933803 -0.05165088)
-#> 2   POINT (-0.881981 -0.09763874)
-#> 3  POINT (-0.9401051 -0.09067107)
-#> 4   POINT (-0.8030895 -0.0664513)
+#> 2  POINT (-0.9401051 -0.09067107)
+#> 3   POINT (-0.881981 -0.09763874)
+#> 4   POINT (-0.7750732 -0.1312637)
 #> 5  POINT (-0.7998737 -0.09106148)
 #> 6   POINT (-0.6788683 -0.0741609)
 #> 7  POINT (-0.6063728 -0.09643894)
 #> 8  POINT (-0.4681831 -0.09190032)
-#> 9   POINT (-0.4430243 -0.1170414)
-#> 10    POINT (-0.32688 -0.1213027)
+#> 9   POINT (-0.4340456 -0.1129716)
+#> 10  POINT (-0.3762444 -0.1410416)
 ```
 
 Plot input data and data after random declustering:
