@@ -8,7 +8,7 @@
 #'
 #' @return Object of class sf
 #' @export
-gridRandom <- function(spatial_object, cellsize, numpoints){
+declstr_random <- function(spatial_object, cellsize, numpoints){
   geom <- sf::st_geometry(spatial_object)
   proj <- sf::st_crs(spatial_object)
   grid <- sf::st_make_grid(spatial_object, crs = sf::st_crs(spatial_object), cellsize = cellsize)

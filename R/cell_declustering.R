@@ -7,7 +7,7 @@
 #'
 #' @return Object of class sf
 #' @export
-gridWeighted <- function(spatial_object, cellsize){
+declstr_weighted <- function(spatial_object, cellsize){
   geom <- sf::st_geometry(spatial_object)
   proj <- sf::st_crs(spatial_object)
   grid <- sf::st_make_grid(spatial_object, crs = sf::st_crs(spatial_object), cellsize = cellsize)
