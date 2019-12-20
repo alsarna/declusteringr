@@ -50,7 +50,7 @@ This is a basic example of cell declustering:
 
 ```{r example}
 library(declusteringr)
-x = gridWeighted(spatial_object = points4, cellsize = 0.09)
+x = declstr_weighted(spatial_object = points4, cellsize = 0.09)
 x
 ```
 
@@ -63,8 +63,8 @@ plot(x["received_weights"], main = "cell declustering",
      key.pos = NULL, reset = FALSE)
 ```
 
-`gridWeighted()` is adding the following columns: `received_weights` - the weight of each cell, and `lengths` - a number of points in cell.
-`gridWeighted()` does not change the number of features.
+`declstr_weighted()` is adding the following columns: `received_weights` - the weight of each cell, and `lengths` - a number of points in cell.
+`declstr_weighted()` does not change the number of features.
 Weights are calculated according to the equation:
 
 ![pattern](man/figures/cell_decl_pattern.PNG)
@@ -76,7 +76,7 @@ Weights are calculated according to the equation:
 This is basic example of random declustering:
 
 ```{r}
-y = gridRandom(spatial_object = points4, cellsize = 0.09, numpoint = 2)
+y = declstr_random(spatial_object = points4, cellsize = 0.09, numpoint = 2)
 y
 ```
 
@@ -89,8 +89,8 @@ plot(y, main = "random declustering",
      key.pos = NULL, reset = FALSE)
 ```
 
-`gridRandom()` is choosing random features by specifying some parameters.
-`gridRandom()` can change the number of features.
+`declstr_random()` is choosing random features by specifying some parameters.
+`declstr_random()` can change the number of features.
 
 ## References
 1. Declustering and Debiasing - M. J. Pyrcz (mpyrcz@ualberta.ca) and C. V. Deutsch (cdeutsch@ualberta.ca) Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA

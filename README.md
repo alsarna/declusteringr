@@ -51,7 +51,7 @@ This is a basic example of cell declustering:
 
 ``` r
 library(declusteringr)
-x = gridWeighted(spatial_object = points4, cellsize = 0.09)
+x = declstr_weighted(spatial_object = points4, cellsize = 0.09)
 #> although coordinates are longitude/latitude, st_intersects assumes that they are planar
 x
 #> Simple feature collection with 200 features and 3 fields
@@ -85,9 +85,9 @@ plot(x["received_weights"], main = "cell declustering",
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
-`gridWeighted()` is adding the following columns: `received_weights` -
-the weight of each cell, and `lengths` - a number of points in cell.
-`gridWeighted()` does not change the number of features. Weights are
+`declstr_weighted()` is adding the following columns: `received_weights`
+- the weight of each cell, and `lengths` - a number of points in cell.
+`declstr_weighted()` does not change the number of features. Weights are
 calculated according to the equation:
 
 ![pattern](man/figures/cell_decl_pattern.PNG)
@@ -97,10 +97,11 @@ sample *j* is located and *n* is the total number cells with samples.
 
 ### Random declustering
 
-This is basic example of random declustering:
+This is basic example of random
+declustering:
 
 ``` r
-y = gridRandom(spatial_object = points4, cellsize = 0.09, numpoint = 2)
+y = declstr_random(spatial_object = points4, cellsize = 0.09, numpoint = 2)
 #> although coordinates are longitude/latitude, st_intersects assumes that they are planar
 y
 #> Simple feature collection with 144 features and 0 fields
@@ -112,10 +113,10 @@ y
 #> First 10 features:
 #>                              geom
 #> 1  POINT (-0.9933803 -0.05165088)
-#> 2  POINT (-0.9401051 -0.09067107)
-#> 3   POINT (-0.881981 -0.09763874)
-#> 4   POINT (-0.7750732 -0.1312637)
-#> 5  POINT (-0.7998737 -0.09106148)
+#> 2   POINT (-0.881981 -0.09763874)
+#> 3  POINT (-0.9401051 -0.09067107)
+#> 4  POINT (-0.7998737 -0.09106148)
+#> 5   POINT (-0.8030895 -0.0664513)
 #> 6   POINT (-0.6788683 -0.0741609)
 #> 7  POINT (-0.6063728 -0.09643894)
 #> 8  POINT (-0.4681831 -0.09190032)
@@ -134,8 +135,8 @@ plot(y, main = "random declustering",
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
-`gridRandom()` is choosing random features by specifying some
-parameters. `gridRandom()` can change the number of features.
+`declstr_random()` is choosing random features by specifying some
+parameters. `declstr_random()` can change the number of features.
 
 ## References
 
