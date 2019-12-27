@@ -40,9 +40,9 @@ points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr
 #> Simple feature collection with 200 features and 1 field
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
+#> epsg (SRID):    NA
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
 ```
 
 ### Cell declustering
@@ -51,27 +51,26 @@ This is a basic example of cell declustering:
 
 ``` r
 library(declusteringr)
-x = declstr_weighted(spatial_object = points4, cellsize = 0.09)
-#> although coordinates are longitude/latitude, st_intersects assumes that they are planar
+x = declstr_weighted(spatial_object = points4, cellsize = 5000)
 x
 #> Simple feature collection with 200 features and 3 fields
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
+#> epsg (SRID):    NA
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
 #> First 10 features:
-#>     id received_weights lengths                       geometry
-#> 157  0         4.545455       2   POINT (0.005593351 0.392986)
-#> 128  1         3.030303       3   POINT (-0.01407625 0.280163)
-#> 140  2         1.298701       7   POINT (-0.4931845 0.3204552)
-#> 4    3         3.030303       3 POINT (-0.7998737 -0.09106148)
-#> 173  4         3.030303       3   POINT (-0.6024538 0.4721198)
-#> 141  5         1.298701       7   POINT (-0.4999889 0.3408532)
-#> 187  6         4.545455       2   POINT (-0.8074892 0.4988539)
-#> 110  7         3.030303       3   POINT (-0.9635923 0.2408171)
-#> 152  8         3.030303       3   POINT (-0.1446985 0.3359325)
-#> 43   9         2.272727       4 POINT (0.03232037 -0.02043053)
+#>     id received_weights lengths                  geometry
+#> 163  0        0.7462687       1 POINT (-1652995 -5254057)
+#> 122  1        0.3731343       2 POINT (-1655337 -5267243)
+#> 133  2        0.7462687       1 POINT (-1711804 -5262422)
+#> 10   3        0.3731343       2 POINT (-1748079 -5310699)
+#> 182  4        0.3731343       2 POINT (-1724664 -5244599)
+#> 145  5        0.7462687       1 POINT (-1712603 -5260028)
+#> 190  6        0.7462687       1 POINT (-1748891 -5241387)
+#> 100  7        0.3731343       2 POINT (-1767435 -5271677)
+#> 150  8        0.7462687       1 POINT (-1670705 -5260691)
+#> 30   9        0.3731343       2 POINT (-1649904 -5302388)
 ```
 
 Plot input data and weighted points:
@@ -101,27 +100,26 @@ This is basic example of random
 declustering:
 
 ``` r
-y = declstr_random(spatial_object = points4, cellsize = 0.09, numpoint = 2)
-#> although coordinates are longitude/latitude, st_intersects assumes that they are planar
+y = declstr_random(spatial_object = points4, cellsize = 5000, numpoint = 2)
 y
-#> Simple feature collection with 144 features and 0 fields
+#> Simple feature collection with 196 features and 0 fields
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1643538 ymax: -5237789
+#> epsg (SRID):    NA
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
 #> First 10 features:
-#>                              geom
-#> 1  POINT (-0.9933803 -0.05165088)
-#> 2   POINT (-0.881981 -0.09763874)
-#> 3  POINT (-0.9401051 -0.09067107)
-#> 4  POINT (-0.7998737 -0.09106148)
-#> 5   POINT (-0.8030895 -0.0664513)
-#> 6   POINT (-0.6788683 -0.0741609)
-#> 7  POINT (-0.6063728 -0.09643894)
-#> 8  POINT (-0.4681831 -0.09190032)
-#> 9   POINT (-0.4340456 -0.1129716)
-#> 10  POINT (-0.3762444 -0.1410416)
+#>                         geom
+#> 1  POINT (-1745143 -5315420)
+#> 2  POINT (-1705916 -5313721)
+#> 3  POINT (-1704856 -5313243)
+#> 4  POINT (-1698034 -5316527)
+#> 5  POINT (-1692213 -5314210)
+#> 6  POINT (-1661228 -5311955)
+#> 7  POINT (-1647020 -5314307)
+#> 8  POINT (-1764673 -5310663)
+#> 9  POINT (-1757793 -5311478)
+#> 10 POINT (-1748079 -5310699)
 ```
 
 Plot input data and data after random declustering:

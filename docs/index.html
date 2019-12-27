@@ -100,42 +100,44 @@
 <a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt; Simple feature collection with 200 features and 1 field</span></a>
 <a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; geometry type:  POINT</span></a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; dimension:      XY</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; epsg (SRID):    4326</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; epsg (SRID):    NA</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a></code></pre></div>
 <div id="cell-declustering" class="section level3">
 <h3 class="hasAnchor">
 <a href="#cell-declustering" class="anchor"></a>Cell declustering</h3>
 <p>This is a basic example of cell declustering:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(declusteringr)</a>
-<a class="sourceLine" id="cb3-2" title="2">x =<span class="st"> </span><span class="kw"><a href="reference/gridWeighted.html">gridWeighted</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span>)</a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></a>
-<a class="sourceLine" id="cb3-4" title="4">x</a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; Simple feature collection with 200 features and 3 fields</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; geometry type:  POINT</span></a>
-<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; dimension:      XY</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; epsg (SRID):    4326</span></a>
-<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs</span></a>
-<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; First 10 features:</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;     id received_weights lengths                       geometry</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 157  0         4.545455       2   POINT (0.005593351 0.392986)</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 128  1         3.030303       3   POINT (-0.01407625 0.280163)</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 140  2         1.298701       7   POINT (-0.4931845 0.3204552)</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 4    3         3.030303       3 POINT (-0.7998737 -0.09106148)</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 173  4         3.030303       3   POINT (-0.6024538 0.4721198)</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 141  5         1.298701       7   POINT (-0.4999889 0.3408532)</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 187  6         4.545455       2   POINT (-0.8074892 0.4988539)</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 110  7         3.030303       3   POINT (-0.9635923 0.2408171)</span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; 152  8         3.030303       3   POINT (-0.1446985 0.3359325)</span></a>
-<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; 43   9         2.272727       4 POINT (0.03232037 -0.02043053)</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-2" title="2">x =<span class="st"> </span><span class="kw"><a href="reference/declstr_weighted.html">declstr_weighted</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="dv">5000</span>)</a>
+<a class="sourceLine" id="cb3-3" title="3">x</a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; Simple feature collection with 200 features and 3 fields</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; geometry type:  POINT</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; dimension:      XY</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; epsg (SRID):    NA</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; First 10 features:</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;     id received_weights lengths                  geometry</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; 163  0        0.7462687       1 POINT (-1652995 -5254057)</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 122  1        0.3731343       2 POINT (-1655337 -5267243)</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 133  2        0.7462687       1 POINT (-1711804 -5262422)</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 10   3        0.3731343       2 POINT (-1748079 -5310699)</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 182  4        0.3731343       2 POINT (-1724664 -5244599)</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 145  5        0.7462687       1 POINT (-1712603 -5260028)</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 190  6        0.7462687       1 POINT (-1748891 -5241387)</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 100  7        0.3731343       2 POINT (-1767435 -5271677)</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 150  8        0.7462687       1 POINT (-1670705 -5260691)</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; 30   9        0.3731343       2 POINT (-1649904 -5302388)</span></a></code></pre></div>
 <p>Plot input data and weighted points:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">st_geometry</span>(points4), <span class="dt">main =</span> <span class="st">"original data"</span>)</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x[<span class="st">"received_weights"</span>], <span class="dt">main =</span> <span class="st">"cell declustering"</span>,</a>
 <a class="sourceLine" id="cb4-4" title="4">     <span class="dt">key.pos =</span> <span class="ot">NULL</span>, <span class="dt">reset =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
-<p><code><a href="reference/gridWeighted.html">gridWeighted()</a></code> is adding the following columns: <code>received_weights</code> - the weight of each cell, and <code>lengths</code> - a number of points in cell. <code><a href="reference/gridWeighted.html">gridWeighted()</a></code> does not change the number of features. Weights are calculated according to the equation:</p>
+<p><code><a href="reference/declstr_weighted.html">declstr_weighted()</a></code> is adding the following columns: <code>received_weights</code></p>
+<ul>
+<li>the weight of each cell, and <code>lengths</code> - a number of points in cell. <code><a href="reference/declstr_weighted.html">declstr_weighted()</a></code> does not change the number of features. Weights are calculated according to the equation:</li>
+</ul>
 <p><img src="reference/figures/cell_decl_pattern.PNG" alt="pattern"></p>
 <p>, where <em>n<sub>i</sub></em> is the number of samples in the cell in which sample <em>j</em> is located and <em>n</em> is the total number cells with samples.</p>
 </div>
@@ -143,34 +145,33 @@
 <h3 class="hasAnchor">
 <a href="#random-declustering" class="anchor"></a>Random declustering</h3>
 <p>This is basic example of random declustering:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">y =<span class="st"> </span><span class="kw"><a href="reference/gridRandom.html">gridRandom</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="fl">0.09</span>, <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they are planar</span></a>
-<a class="sourceLine" id="cb5-3" title="3">y</a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; Simple feature collection with 144 features and 0 fields</span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; geometry type:  POINT</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; dimension:      XY</span></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; bbox:           xmin: -1.032267 ymin: -0.1410416 xmax: 0.09442347 ymax: 0.5297012</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; epsg (SRID):    4326</span></a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs</span></a>
-<a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt; First 10 features:</span></a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt;                              geom</span></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; 1  POINT (-0.9933803 -0.05165088)</span></a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt; 2  POINT (-0.9401051 -0.09067107)</span></a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; 3   POINT (-0.881981 -0.09763874)</span></a>
-<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 4   POINT (-0.7750732 -0.1312637)</span></a>
-<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; 5  POINT (-0.7998737 -0.09106148)</span></a>
-<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; 6   POINT (-0.6788683 -0.0741609)</span></a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; 7  POINT (-0.6063728 -0.09643894)</span></a>
-<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; 8  POINT (-0.4681831 -0.09190032)</span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; 9   POINT (-0.4340456 -0.1129716)</span></a>
-<a class="sourceLine" id="cb5-21" title="21"><span class="co">#&gt; 10  POINT (-0.3762444 -0.1410416)</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">y =<span class="st"> </span><span class="kw"><a href="reference/declstr_random.html">declstr_random</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="dv">5000</span>, <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2">y</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; Simple feature collection with 196 features and 0 fields</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; geometry type:  POINT</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; dimension:      XY</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1643538 ymax: -5237789</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; epsg (SRID):    NA</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; First 10 features:</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt;                         geom</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; 1  POINT (-1745143 -5315420)</span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; 2  POINT (-1705916 -5313721)</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt; 3  POINT (-1704856 -5313243)</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; 4  POINT (-1698034 -5316527)</span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 5  POINT (-1692213 -5314210)</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; 6  POINT (-1661228 -5311955)</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; 7  POINT (-1647020 -5314307)</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; 8  POINT (-1764673 -5310663)</span></a>
+<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; 9  POINT (-1757793 -5311478)</span></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; 10 POINT (-1748079 -5310699)</span></a></code></pre></div>
 <p>Plot input data and data after random declustering:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">st_geometry</span>(points4), <span class="dt">main =</span> <span class="st">"original data"</span>)</a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(y, <span class="dt">main =</span> <span class="st">"random declustering"</span>,</a>
 <a class="sourceLine" id="cb6-4" title="4">     <span class="dt">key.pos =</span> <span class="ot">NULL</span>, <span class="dt">reset =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
-<p><code><a href="reference/gridRandom.html">gridRandom()</a></code> is choosing random features by specifying some parameters. <code><a href="reference/gridRandom.html">gridRandom()</a></code> can change the number of features.</p>
+<p><code><a href="reference/declstr_random.html">declstr_random()</a></code> is choosing random features by specifying some parameters. <code><a href="reference/declstr_random.html">declstr_random()</a></code> can change the number of features.</p>
 </div>
 </div>
 <div id="references" class="section level2">
@@ -204,6 +205,7 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Aleksandra Sarna <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Jakub Nowosad <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
 
@@ -212,7 +214,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Aleksandra Sarna.</p>
+  <p>Developed by Aleksandra Sarna, Jakub Nowosad.</p>
 </div>
 
 <div class="pkgdown">
