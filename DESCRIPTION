@@ -2,10 +2,13 @@ Package: declusteringr
 Title: Spatial Data Declustering
 Version: 0.0.1
 Authors@R: 
-    person(given = "Aleksandra",
+    c(person(given = "Aleksandra",
            family = "Sarna",
            role = c("aut", "cre"),
-           email = "aleksandra.sarna97@gmail.com")
+           email = "aleksandra.sarna97@gmail.com"),
+      person(given = "Jakub",
+            family = "Nowosad",
+            role = "aut"))
 Description: declusteringr improves representation of preferential sampling and unequally distribution.
 License: MIT + file LICENSE
 Encoding: UTF-8
