@@ -93,4 +93,8 @@ plot(y, main = "random declustering",
 `declstr_random()` can change the number of features.
 
 ## References
-1. Declustering and Debiasing - M. J. Pyrcz (mpyrcz@ualberta.ca) and C. V. Deutsch (cdeutsch@ualberta.ca) Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA
+1. Declustering and Debiasing - M. J. Pyrcz (mpyrcz@ualberta.ca) and C. V. Deutsch (cdeutsch@ualberta.ca), Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA
+2. Praktyczny poradnik – jak szybko zrozumieć i wykorzystać geostatystykę w pracy badawczej
+Practical guide – How to fast understand and use geostatistics in own research work - prof. UAM Alfred Stach, Uniwersytet im. Adama Mickiewicza w Poznaniu
+3. Cell Declustering Parameter Selection - C. V. Deutsch
+4. Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN 978-83-953296-0-9. Online: https://bookdown.org/nowosad/Geostatystyka/
