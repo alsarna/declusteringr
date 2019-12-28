@@ -50,7 +50,7 @@ This is a basic example of cell declustering:
 
 ```{r example, message=TRUE, warning=TRUE}
 library(declusteringr)
-x = declstr_weighted(spatial_object = points4, cellsize = 5000)
+x = declstr_weighted(spatial_object = points4, cellsize = 10000)
 x
 ```
 
@@ -76,7 +76,7 @@ Weights are calculated according to the equation:
 This is basic example of random declustering:
 
 ```{r}
-y = declstr_random(spatial_object = points4, cellsize = 5000, numpoint = 2)
+y = declstr_random(spatial_object = points4, cellsize = 10000, numpoint = 2)
 y
 ```
 

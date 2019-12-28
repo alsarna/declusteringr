@@ -108,7 +108,7 @@
 <a href="#cell-declustering" class="anchor"></a>Cell declustering</h3>
 <p>This is a basic example of cell declustering:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(declusteringr)</a>
-<a class="sourceLine" id="cb3-2" title="2">x =<span class="st"> </span><span class="kw"><a href="reference/declstr_weighted.html">declstr_weighted</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="dv">5000</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2">x =<span class="st"> </span><span class="kw"><a href="reference/declstr_weighted.html">declstr_weighted</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="dv">10000</span>)</a>
 <a class="sourceLine" id="cb3-3" title="3">x</a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; Simple feature collection with 200 features and 3 fields</span></a>
 <a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; geometry type:  POINT</span></a>
@@ -118,16 +118,16 @@
 <a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; First 10 features:</span></a>
 <a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;     id received_weights lengths                  geometry</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; 163  0        0.7462687       1 POINT (-1652995 -5254057)</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 122  1        0.3731343       2 POINT (-1655337 -5267243)</span></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 133  2        0.7462687       1 POINT (-1711804 -5262422)</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 10   3        0.3731343       2 POINT (-1748079 -5310699)</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 182  4        0.3731343       2 POINT (-1724664 -5244599)</span></a>
-<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 145  5        0.7462687       1 POINT (-1712603 -5260028)</span></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 190  6        0.7462687       1 POINT (-1748891 -5241387)</span></a>
-<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 100  7        0.3731343       2 POINT (-1767435 -5271677)</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 150  8        0.7462687       1 POINT (-1670705 -5260691)</span></a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; 30   9        0.3731343       2 POINT (-1649904 -5302388)</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; 172  0        13.333333       1 POINT (-1652995 -5254057)</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; 121  1         3.333333       4 POINT (-1655337 -5267243)</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; 139  2         3.333333       4 POINT (-1711804 -5262422)</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; 3    3         6.666667       2 POINT (-1748079 -5310699)</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; 187  4         6.666667       2 POINT (-1724664 -5244599)</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; 140  5         3.333333       4 POINT (-1712603 -5260028)</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 179  6         6.666667       2 POINT (-1748891 -5241387)</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; 99   7         3.333333       4 POINT (-1767435 -5271677)</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; 150  8         6.666667       2 POINT (-1670705 -5260691)</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; 41   9         4.444444       3 POINT (-1649904 -5302388)</span></a></code></pre></div>
 <p>Plot input data and weighted points:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">st_geometry</span>(points4), <span class="dt">main =</span> <span class="st">"original data"</span>)</a>
@@ -145,9 +145,9 @@
 <h3 class="hasAnchor">
 <a href="#random-declustering" class="anchor"></a>Random declustering</h3>
 <p>This is basic example of random declustering:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">y =<span class="st"> </span><span class="kw"><a href="reference/declstr_random.html">declstr_random</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="dv">5000</span>, <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">y =<span class="st"> </span><span class="kw"><a href="reference/declstr_random.html">declstr_random</a></span>(<span class="dt">spatial_object =</span> points4, <span class="dt">cellsize =</span> <span class="dv">10000</span>, <span class="dt">numpoint =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb5-2" title="2">y</a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; Simple feature collection with 196 features and 0 fields</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; Simple feature collection with 159 features and 0 fields</span></a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; geometry type:  POINT</span></a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; dimension:      XY</span></a>
 <a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1643538 ymax: -5237789</span></a>
@@ -155,16 +155,16 @@
 <a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a>
 <a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; First 10 features:</span></a>
 <a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt;                         geom</span></a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; 1  POINT (-1745143 -5315420)</span></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; 2  POINT (-1705916 -5313721)</span></a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt; 3  POINT (-1704856 -5313243)</span></a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; 4  POINT (-1698034 -5316527)</span></a>
-<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 5  POINT (-1692213 -5314210)</span></a>
-<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; 6  POINT (-1661228 -5311955)</span></a>
-<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; 7  POINT (-1647020 -5314307)</span></a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; 8  POINT (-1764673 -5310663)</span></a>
-<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; 9  POINT (-1757793 -5311478)</span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; 10 POINT (-1748079 -5310699)</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; 1  POINT (-1764673 -5310663)</span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; 2  POINT (-1757793 -5311478)</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt; 3  POINT (-1748461 -5307808)</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; 4  POINT (-1748079 -5310699)</span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 5  POINT (-1745143 -5315420)</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; 6  POINT (-1733773 -5308707)</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; 7  POINT (-1725205 -5311317)</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; 8  POINT (-1708887 -5310775)</span></a>
+<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; 9  POINT (-1705916 -5313721)</span></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; 10 POINT (-1698034 -5316527)</span></a></code></pre></div>
 <p>Plot input data and data after random declustering:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">st_geometry</span>(points4), <span class="dt">main =</span> <span class="st">"original data"</span>)</a>
@@ -178,7 +178,11 @@
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
 <ol>
-<li>Declustering and Debiasing - M. J. Pyrcz (<a href="mailto:mpyrcz@ualberta.ca" class="email">mpyrcz@ualberta.ca</a>) and C. V. Deutsch (<a href="mailto:cdeutsch@ualberta.ca" class="email">cdeutsch@ualberta.ca</a>) Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA</li>
+<li>Declustering and Debiasing - M. J. Pyrcz (<a href="mailto:mpyrcz@ualberta.ca" class="email">mpyrcz@ualberta.ca</a>) and C. V. Deutsch (<a href="mailto:cdeutsch@ualberta.ca" class="email">cdeutsch@ualberta.ca</a>), Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA</li>
+<li>Praktyczny poradnik – jak szybko zrozumieć i wykorzystać geostatystykę w pracy badawczej Practical guide – How to fast understand and use geostatistics in own research work - prof. UAM Alfred Stach, Uniwersytet im. Adama Mickiewicza w Poznaniu</li>
+<li>Cell Declustering Parameter Selection - C. V. Deutsch</li>
+<li>Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN 978-83-953296-0-9. Online: <a href="https://bookdown.org/nowosad/Geostatystyka/" class="uri">https://bookdown.org/nowosad/Geostatystyka/</a>
+</li>
 </ol>
 </div>
 </div>

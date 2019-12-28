@@ -9,7 +9,7 @@ declstr_random(spatial_object, cellsize, numpoints)
 \arguments{
 \item{spatial_object}{Object of class sfc or sf}
 
-\item{cellsize}{Definition of grid cell}
+\item{cellsize}{Target cellsize in map units}
 
 \item{numpoints}{Number of points that will be chosen from a grid cell}
 }
