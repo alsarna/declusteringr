@@ -8,6 +8,11 @@
 #'
 #' @return Object of class sf
 #' @export
+#'
+#' @examples
+#' points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
+#' x = declstr_random(spatial_object = points4, cellsize = 10000, numpoints = 2)
+#' x
 declstr_random <- function(spatial_object, cellsize, numpoints){
   if (unique(sf::st_geometry_type(spatial_object)) == "POINT"){
     geom <- sf::st_geometry(spatial_object)

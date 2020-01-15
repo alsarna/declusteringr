@@ -19,3 +19,8 @@ Object of class sf
 \description{
 Function for random points selection from grid cells in a spatial object
 }
+\examples{
+points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
+x = declstr_random(spatial_object = points4, cellsize = 10000, numpoints = 2)
+x
+}

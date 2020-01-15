@@ -17,3 +17,8 @@ Object of class sf
 \description{
 Function returns list of points with their weights and lengths from grid cell in spatial object
 }
+\examples{
+points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
+x = declstr_weighted(spatial_object = points4, cellsize = 10000)
+x
+}
