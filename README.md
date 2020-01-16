@@ -112,14 +112,14 @@ y
 #>                         geom
 #> 1  POINT (-1764673 -5310663)
 #> 2  POINT (-1757793 -5311478)
-#> 3  POINT (-1748461 -5307808)
-#> 4  POINT (-1748079 -5310699)
+#> 3  POINT (-1748079 -5310699)
+#> 4  POINT (-1748461 -5307808)
 #> 5  POINT (-1745143 -5315420)
 #> 6  POINT (-1733773 -5308707)
 #> 7  POINT (-1725205 -5311317)
 #> 8  POINT (-1708887 -5310775)
 #> 9  POINT (-1705916 -5313721)
-#> 10 POINT (-1698034 -5316527)
+#> 10 POINT (-1704856 -5313243)
 ```
 
 Plot input data and data after random declustering:
@@ -149,3 +149,5 @@ parameters. `declstr_random()` can change the number of features.
 4.  Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN
     978-83-953296-0-9. Online:
     <https://bookdown.org/nowosad/Geostatystyka/>
+5.  Tobler W. (1970), A Computer Model Simulating Urban Growth in
+    Detroit Region, “Economic Geography” 46(2)
