@@ -98,3 +98,4 @@ plot(y, main = "random declustering",
 Practical guide – How to fast understand and use geostatistics in own research work - prof. UAM Alfred Stach, Uniwersytet im. Adama Mickiewicza w Poznaniu
 3. Cell Declustering Parameter Selection - C. V. Deutsch
 4. Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN 978-83-953296-0-9. Online: https://bookdown.org/nowosad/Geostatystyka/
+5. Tobler W. (1970), A Computer Model Simulating Urban Growth in Detroit Region, "Economic Geography" 46(2)
