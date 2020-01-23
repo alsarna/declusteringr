@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • declusteringr</title>
+<title>Random Declustering — declstr_random • declusteringr</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Random Declustering — declstr_random" />
+<meta property="og:description" content="Function for random points selection from grid cells in a spatial object" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -109,28 +111,74 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/alsarna/declusteringr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Random Declustering</h1>
+    <small class="dont-index">Source: <a href='https://github.com/alsarna/declusteringr/blob/master/R/random_declustering.R'><code>R/random_declustering.R</code></a></small>
+    <div class="hidden name"><code>declstr_random.Rd</code></div>
     </div>
 
-    <div id="declusteringr-0-0-1" class="section level1">
-<h1 class="page-header">
-<a href="#declusteringr-0-0-1" class="anchor"></a>declusteringr 0.0.1</h1>
-<ul>
-<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Function for random points selection from grid cells in a spatial object</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>declstr_random</span>(<span class='no'>spatial_object</span>, <span class='no'>cellsize</span>, <span class='no'>numpoints</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>spatial_object</th>
+      <td><p>Object of class sfc or sf</p></td>
+    </tr>
+    <tr>
+      <th>cellsize</th>
+      <td><p>Target cellsize in map units</p></td>
+    </tr>
+    <tr>
+      <th>numpoints</th>
+      <td><p>Number of points that will be chosen from a grid cell</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Object of class sf</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>points4</span> <span class='kw'>=</span> <span class='kw pkg'>sf</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/sf/man/st_read.html'>st_read</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"points/punkty4.shp"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"declusteringr"</span>))</div><div class='output co'>#&gt; Reading layer `punkty4' from data source `/tmp/Rtmp7lm86k/temp_libpath36cd32fd5b06f/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'
+#&gt; Simple feature collection with 200 features and 1 field
+#&gt; geometry type:  POINT
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
+#&gt; epsg (SRID):    2180
+#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</div><div class='input'><span class='no'>x</span> <span class='kw'>=</span> <span class='fu'>declstr_random</span>(<span class='kw'>spatial_object</span> <span class='kw'>=</span> <span class='no'>points4</span>, <span class='kw'>cellsize</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>numpoints</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+<span class='no'>x</span></div><div class='output co'>#&gt; Simple feature collection with 159 features and 0 fields
+#&gt; geometry type:  POINT
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: -1774543 ymin: -5316527 xmax: -1642585 ymax: -5237789
+#&gt; epsg (SRID):    2180
+#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+#&gt; First 10 features:
+#&gt;                         geom
+#&gt; 1  POINT (-1757793 -5311478)
+#&gt; 2  POINT (-1764673 -5310663)
+#&gt; 3  POINT (-1748461 -5307808)
+#&gt; 4  POINT (-1748079 -5310699)
+#&gt; 5  POINT (-1745143 -5315420)
+#&gt; 6  POINT (-1733773 -5308707)
+#&gt; 7  POINT (-1725205 -5311317)
+#&gt; 8  POINT (-1708887 -5310775)
+#&gt; 9  POINT (-1705916 -5313721)
+#&gt; 10 POINT (-1698034 -5316527)</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#declusteringr-0-0-1">0.0.1</a></li>
-      </ul>
-    </div>
-  </div>
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
+  </div>
 </div>
 
 

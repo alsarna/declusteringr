@@ -34,15 +34,15 @@ Let’s start with reading the data:
 
 ``` r
 library(sf)
-#> Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3
+#> Linking to GEOS 3.7.1, GDAL 2.3.2, PROJ 5.2.0
 points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
-#> Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\R\win-library\3.6\declusteringr\points\punkty4.shp' using driver `ESRI Shapefile'
+#> Reading layer `punkty4' from data source `/home/jn/R/x86_64-redhat-linux-gnu-library/3.6/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 200 features and 1 field
 #> geometry type:  POINT
 #> dimension:      XY
 #> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
-#> epsg (SRID):    NA
-#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
+#> epsg (SRID):    2180
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
 ```
 
 ### Cell declustering
@@ -57,8 +57,8 @@ x
 #> geometry type:  POINT
 #> dimension:      XY
 #> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
-#> epsg (SRID):    NA
-#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
+#> epsg (SRID):    2180
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
 #> First 10 features:
 #>     id received_weights lengths                  geometry
 #> 172  0        13.333333       1 POINT (-1652995 -5254057)
@@ -105,21 +105,21 @@ y
 #> Simple feature collection with 159 features and 0 fields
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1643538 ymax: -5237789
-#> epsg (SRID):    NA
-#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
+#> bbox:           xmin: -1774543 ymin: -5316527 xmax: -1642585 ymax: -5237910
+#> epsg (SRID):    2180
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
 #> First 10 features:
 #>                         geom
-#> 1  POINT (-1764673 -5310663)
-#> 2  POINT (-1757793 -5311478)
-#> 3  POINT (-1748079 -5310699)
-#> 4  POINT (-1748461 -5307808)
+#> 1  POINT (-1757793 -5311478)
+#> 2  POINT (-1764673 -5310663)
+#> 3  POINT (-1748461 -5307808)
+#> 4  POINT (-1748079 -5310699)
 #> 5  POINT (-1745143 -5315420)
 #> 6  POINT (-1733773 -5308707)
 #> 7  POINT (-1725205 -5311317)
 #> 8  POINT (-1708887 -5310775)
 #> 9  POINT (-1705916 -5313721)
-#> 10 POINT (-1704856 -5313243)
+#> 10 POINT (-1698034 -5316527)
 ```
 
 Plot input data and data after random declustering:
