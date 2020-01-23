@@ -22,3 +22,12 @@ testthat::test_that("checking type",{
   testthat::expect_type(points5, "list")
   testthat::expect_type(points6, "list")
 })
+
+testthat::test_that("checking class of object",{
+  testthat::expect_is(points1, "sf")
+  testthat::expect_is(points2, "sf")
+  testthat::expect_is(points3, "sf")
+  testthat::expect_is(points4, "sf")
+  testthat::expect_is(points5, "sf")
+  testthat::expect_is(points6, "sf")
+})
