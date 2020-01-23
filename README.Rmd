@@ -56,7 +56,7 @@ x
 
 Plot input data and weighted points:
 
-```{r}
+```{r plot1}
 par(mfrow = c(1, 2))
 plot(st_geometry(points4), main = "original data")
 plot(x["received_weights"], main = "cell declustering",
@@ -82,7 +82,7 @@ y
 
 Plot input data and data after random declustering:
 
-```{r}
+```{r plot2}
 par(mfrow = c(1, 2))
 plot(st_geometry(points4), main = "original data")
 plot(y, main = "random declustering",
