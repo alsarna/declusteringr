@@ -67,7 +67,7 @@ plot(x["received_weights"], main = "cell declustering",
 `gridWeighted()` does not change the number of features.
 Weights are calculated according to the equation:
 
-![pattern](man/figures/cell_decl_pattern.PNG)
+![pattern](man/figures/cell_decl_pattern.png)
 
 , where *n~i~* is the number of samples in the cell in which sample *j* is located and *n* is the total number cells with samples.
 
