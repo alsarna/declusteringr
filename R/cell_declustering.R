@@ -50,7 +50,9 @@ declstr_weighted <- function(spatial_object, cellsize){
      spatial_object_decl <- sf::st_sf(data.frame(spatial_object, weights_and_lengths))
 
      return(spatial_object_decl[-c(2,3)])
+   } else if(unique(sf::st_geometry_type(spatial_object)) == "MULTIPOINT"){
+      stop("You have to use 'POINT' type of geometry. Use st_cast() function to convert type.")
    } else {
       stop("You have to use 'POINT' type of geometry.")
-    }
+   }
 }

@@ -33,7 +33,9 @@ declstr_random <- function(spatial_object, cellsize, numpoints){
       sf_object = geom[unlisted]
     }
     return(sf::st_sf(geom = sf_object))
+  } else if(unique(sf::st_geometry_type(spatial_object)) == "MULTIPOINT"){
+      stop("You have to use 'POINT' type of geometry. Use st_cast() function to convert type.")
   } else {
-    stop("You have to use 'POINT' type of geometry.")
+      stop("You have to use 'POINT' type of geometry.")
   }
 }
