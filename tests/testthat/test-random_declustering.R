@@ -22,3 +22,10 @@ testthat::test_that("checking class of object",{
   testthat::expect_is(points5, "sf")
   testthat::expect_is(points6, "sf")
 })
+
+testthat::test_that("checking geometry errors",{
+  test_linestring <-  sf::st_read(system.file("points/linestring.shp", package = "declusteringr"))
+  test_polygon <-  sf::st_read(system.file("points/polygon.shp", package = "declusteringr"))
+  test_multipoint <- sf::st_read(system.file("points/multipoint.shp", package = "declusteringr"))
+
+})
