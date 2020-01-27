@@ -14,9 +14,15 @@
 #' x = declstr_random(spatial_object = points4, cellsize = 10000, numpoints = 2)
 #' x
 declstr_random <- function(spatial_object, cellsize, numpoints){
+  if (class(cellsize) != "numeric"){
+    stop("'cellsize' must be numeric")
+  }
+  if (class(numpoints) != "numeric"){
+    stop("'numpoints' must be an integer")
+  }
   if (unique(sf::st_geometry_type(spatial_object)) == "POINT"){
     geom <- sf::st_geometry(spatial_object)
-    grid <- sf::st_make_grid(spatial_object, crs = sf::st_crs(spatial_object), cellsize = cellsize)
+    grid <- sf::st_make_grid(spatial_object, crs = sf::st_crs(spatial_object), cellsize = as.integer(cellsize))
     intersection <- sf::st_intersects(grid, geom, sparse = TRUE)
 
     for (i in seq_along(intersection)){

@@ -13,6 +13,9 @@
 #' x = declstr_weighted(spatial_object = points4, cellsize = 10000)
 #' x
 declstr_weighted <- function(spatial_object, cellsize){
+   if (class(cellsize) != "numeric"){
+      stop("'cellsize' must be numeric")
+   }
    if (unique(sf::st_geometry_type(spatial_object)) == "POINT"){
      geom <- sf::st_geometry(spatial_object)
      grid <- sf::st_make_grid(spatial_object, crs = sf::st_crs(spatial_object), cellsize = cellsize)
