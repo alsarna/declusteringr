@@ -30,7 +30,7 @@ test_multipoint <- sf::st_read(system.file("points/multipoint.shp", package = "d
 testthat::test_that("checking geometry errors",{
   testthat::expect_error(declstr_random(test_linestring, 2000, 2), "You have to use 'POINT' type of geometry.")
   testthat::expect_error(declstr_random(test_polygon, 2000, 2), "You have to use 'POINT' type of geometry.")
-  #testthat::expect_error(declstr_random(test_multipoint, 2000, 2), "You have to use 'POINT' type of geometry. Use st_cast() function to convert the type.")
+  testthat::expect_error(declstr_random(test_multipoint, 2000, 2))
 })
 
 testthat::test_that("checking parameters errors",{
