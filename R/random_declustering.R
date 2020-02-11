@@ -37,9 +37,7 @@ declstr_random <- function(spatial_object, cellsize, numpoints){
       }
       unlisted <- unlist(intersection)
 
-      sfc_object <- geom[unlisted]
-
-      sf_object <- sf::st_sf(sfc_object, spatial_object[unlisted, ])
+      sf_object <- spatial_object[unlisted, ]
     }
     return(sf_object)
   } else if(unique(sf::st_geometry_type(spatial_object)) == "MULTIPOINT"){
