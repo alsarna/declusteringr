@@ -35,10 +35,15 @@ declstr_random <- function(spatial_object, cellsize, numpoints){
         x <- intersection[[i]][sample(seq_along(intersection[[i]]), size = length(intersection[[i]]))]
         intersection[[i]] <- x
       }
-      unlisted = unlist(intersection)
-      sf_object = geom[unlisted]
+      unlisted <- unlist(intersection)
+
+      sfc_object <- geom[unlisted]
+
+      sf_object <-  sf::st_sf(sfc_object)
+
+      sf_binded <- cbind(sf_object, spatial_object[[1]][unlisted])
     }
-    return(sf::st_sf(geom = sf_object))
+    return(sf_binded)
   } else if(unique(sf::st_geometry_type(spatial_object)) == "MULTIPOINT"){
       stop("You have to use 'POINT' type of geometry. Use st_cast() function to convert the type.")
   } else {
