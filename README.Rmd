@@ -32,7 +32,7 @@ You can install the development version of declusteringr with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("declusteringr")
+remotes::install_github("alsarna/declusteringr")
 ```
 
 ## Examples
