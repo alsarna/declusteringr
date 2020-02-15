@@ -34,15 +34,15 @@ Let’s start with reading the data:
 
 ``` r
 library(sf)
-#> Linking to GEOS 3.7.1, GDAL 2.3.2, PROJ 5.2.0
+#> Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3
 points4 = sf::st_read(system.file("points/punkty4.shp", package = "declusteringr"))
-#> Reading layer `punkty4' from data source `/home/jn/R/x86_64-redhat-linux-gnu-library/3.6/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'
+#> Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\R\win-library\3.6\declusteringr\points\punkty4.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 200 features and 1 field
 #> geometry type:  POINT
 #> dimension:      XY
 #> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
-#> epsg (SRID):    2180
-#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+#> epsg (SRID):    NA
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
 ```
 
 ### Cell declustering
@@ -57,8 +57,8 @@ x
 #> geometry type:  POINT
 #> dimension:      XY
 #> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
-#> epsg (SRID):    2180
-#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+#> epsg (SRID):    NA
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
 #> First 10 features:
 #>     id received_weights lengths                  geometry
 #> 172  0        13.333333       1 POINT (-1652995 -5254057)
@@ -105,13 +105,13 @@ y
 #> Simple feature collection with 159 features and 1 field
 #> geometry type:  POINT
 #> dimension:      XY
-#> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789
-#> epsg (SRID):    2180
-#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+#> bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237910
+#> epsg (SRID):    NA
+#> proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs
 #> First 10 features:
 #>      id                  geometry
-#> 68   67 POINT (-1764673 -5310663)
 #> 50   49 POINT (-1757793 -5311478)
+#> 68   67 POINT (-1764673 -5310663)
 #> 4     3 POINT (-1748079 -5310699)
 #> 177 176 POINT (-1748461 -5307808)
 #> 56   55 POINT (-1745143 -5315420)
@@ -119,7 +119,7 @@ y
 #> 16   15 POINT (-1725205 -5311317)
 #> 59   58 POINT (-1705916 -5313721)
 #> 28   27 POINT (-1708887 -5310775)
-#> 195 194 POINT (-1698034 -5316527)
+#> 184 183 POINT (-1704856 -5313243)
 ```
 
 Plot input data and data after random declustering:
@@ -141,13 +141,14 @@ parameters. `declstr_random()` can change the number of features.
 1.  Declustering and Debiasing - M. J. Pyrcz (<mpyrcz@ualberta.ca>) and
     C. V. Deutsch (<cdeutsch@ualberta.ca>), Centre for Computational
     Geostatistics University of Alberta, Edmonton, Alberta, CANADA
-2.  Praktyczny poradnik – jak szybko zrozumieć i wykorzystać
-    geostatystykę w pracy badawczej Practical guide – How to fast
-    understand and use geostatistics in own research work - prof. UAM
-    Alfred Stach, Uniwersytet im. Adama Mickiewicza w Poznaniu
-3.  Cell Declustering Parameter Selection - C. V. Deutsch
-4.  Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN
+2.  Cell Declustering Parameter Selection - C. V. Deutsch
+3.  Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN
     978-83-953296-0-9. Online:
     <https://bookdown.org/nowosad/Geostatystyka/>
-5.  Tobler W. (1970), A Computer Model Simulating Urban Growth in
-    Detroit Region, “Economic Geography” 46(2)
+4.  Nowosad, J., (2019). Elementarz programisty: wstęp do programowania
+    używając R. Poznań: Space A. Online:
+    <https://nowosad.github.io/elp/>
+5.  Lovelace, Robin & Nowosad, Jakub & Muenchow, Jannes. (2019).
+    Geocomputation with R. 10.1201/9780203730058.
+6.  R Packages, H. Wickham, J. Bryan. Online: <https://r-pkgs.org/>
+    (2015)

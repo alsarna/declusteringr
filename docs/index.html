@@ -94,15 +94,15 @@
 <a href="#examples" class="anchor"></a>Examples</h2>
 <p>Let’s start with reading the data:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(sf)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; Linking to GEOS 3.7.1, GDAL 2.3.2, PROJ 5.2.0</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3</span></a>
 <a class="sourceLine" id="cb2-3" title="3">points4 =<span class="st"> </span>sf<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/sf/man/st_read.html">st_read</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"points/punkty4.shp"</span>, <span class="dt">package =</span> <span class="st">"declusteringr"</span>))</a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt; Reading layer `punkty4' from data source `/home/jn/R/x86_64-redhat-linux-gnu-library/3.6/declusteringr/points/punkty4.shp' using driver `ESRI Shapefile'</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt; Reading layer `punkty4' from data source `C:\Users\Lenovo\Documents\R\win-library\3.6\declusteringr\points\punkty4.shp' using driver `ESRI Shapefile'</span></a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt; Simple feature collection with 200 features and 1 field</span></a>
 <a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; geometry type:  POINT</span></a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; dimension:      XY</span></a>
 <a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; epsg (SRID):    2180</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; epsg (SRID):    NA</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a></code></pre></div>
 <div id="cell-declustering" class="section level3">
 <h3 class="hasAnchor">
 <a href="#cell-declustering" class="anchor"></a>Cell declustering</h3>
@@ -114,8 +114,8 @@
 <a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; geometry type:  POINT</span></a>
 <a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; dimension:      XY</span></a>
 <a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789</span></a>
-<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; epsg (SRID):    2180</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; epsg (SRID):    NA</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; First 10 features:</span></a>
 <a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;     id received_weights lengths                  geometry</span></a>
 <a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; 172  0        13.333333       1 POINT (-1652995 -5254057)</span></a>
@@ -150,13 +150,13 @@
 <a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; Simple feature collection with 159 features and 1 field</span></a>
 <a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; geometry type:  POINT</span></a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; dimension:      XY</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237789</span></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; epsg (SRID):    2180</span></a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; bbox:           xmin: -1775590 ymin: -5316527 xmax: -1642585 ymax: -5237910</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; epsg (SRID):    NA</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; proj4string:    +proj=tmerc +lat_0=0 +lon_0=19 +k=0.9993 +x_0=500000 +y_0=-5300000 +ellps=GRS80 +units=m +no_defs</span></a>
 <a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; First 10 features:</span></a>
 <a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt;      id                  geometry</span></a>
-<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; 68   67 POINT (-1764673 -5310663)</span></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; 50   49 POINT (-1757793 -5311478)</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; 50   49 POINT (-1757793 -5311478)</span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; 68   67 POINT (-1764673 -5310663)</span></a>
 <a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt; 4     3 POINT (-1748079 -5310699)</span></a>
 <a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; 177 176 POINT (-1748461 -5307808)</span></a>
 <a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 56   55 POINT (-1745143 -5315420)</span></a>
@@ -164,7 +164,7 @@
 <a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; 16   15 POINT (-1725205 -5311317)</span></a>
 <a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; 59   58 POINT (-1705916 -5313721)</span></a>
 <a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; 28   27 POINT (-1708887 -5310775)</span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; 195 194 POINT (-1698034 -5316527)</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; 184 183 POINT (-1704856 -5313243)</span></a></code></pre></div>
 <p>Plot input data and data after random declustering:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="dt">mfrow =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="kw">st_geometry</span>(points4), <span class="dt">main =</span> <span class="st">"original data"</span>)</a>
@@ -179,11 +179,14 @@
 <a href="#references" class="anchor"></a>References</h2>
 <ol>
 <li>Declustering and Debiasing - M. J. Pyrcz (<a href="mailto:mpyrcz@ualberta.ca" class="email">mpyrcz@ualberta.ca</a>) and C. V. Deutsch (<a href="mailto:cdeutsch@ualberta.ca" class="email">cdeutsch@ualberta.ca</a>), Centre for Computational Geostatistics University of Alberta, Edmonton, Alberta, CANADA</li>
-<li>Praktyczny poradnik – jak szybko zrozumieć i wykorzystać geostatystykę w pracy badawczej Practical guide – How to fast understand and use geostatistics in own research work - prof. UAM Alfred Stach, Uniwersytet im. Adama Mickiewicza w Poznaniu</li>
 <li>Cell Declustering Parameter Selection - C. V. Deutsch</li>
 <li>Nowosad, J., (2019). Geostatystyka w R. Poznań: Space A. ISBN 978-83-953296-0-9. Online: <a href="https://bookdown.org/nowosad/Geostatystyka/" class="uri">https://bookdown.org/nowosad/Geostatystyka/</a>
 </li>
-<li>Tobler W. (1970), A Computer Model Simulating Urban Growth in Detroit Region, “Economic Geography” 46(2)</li>
+<li>Nowosad, J., (2019). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: <a href="https://nowosad.github.io/elp/" class="uri">https://nowosad.github.io/elp/</a>
+</li>
+<li>Lovelace, Robin &amp; Nowosad, Jakub &amp; Muenchow, Jannes. (2019). Geocomputation with R. 10.1201/9780203730058.</li>
+<li>R Packages, H. Wickham, J. Bryan. Online: <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a>
+(2015)</li>
 </ol>
 </div>
 </div>
